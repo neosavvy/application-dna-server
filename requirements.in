@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+celery
+redis
+flower
+amqp
+supabase
+psycopg2
+pip-tools
+nltk
