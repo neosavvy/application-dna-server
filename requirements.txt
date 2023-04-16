@@ -4,6 +4,8 @@
 #
 #    pip-compile --resolver=backtracking requirements.in
 #
+alembic==1.10.3
+    # via -r requirements.in
 amqp==5.1.1
     # via
     #   -r requirements.in
@@ -57,6 +59,8 @@ colorama==0.4.6
     # via twine
 cryptography==40.0.2
     # via secretstorage
+deprecated==1.2.13
+    # via limits
 deprecation==2.1.0
     # via postgrest
 docutils==0.19
@@ -73,6 +77,8 @@ gitpython==3.1.31
     # via python-semantic-release
 gotrue==1.0.1
     # via supabase
+greenlet==2.0.2
+    # via sqlalchemy
 h11==0.14.0
     # via
     #   httpcore
@@ -99,6 +105,8 @@ importlib-metadata==6.4.1
     # via
     #   keyring
     #   twine
+importlib-resources==5.12.0
+    # via limits
 invoke==1.7.3
     # via python-semantic-release
 jaraco-classes==3.2.3
@@ -113,15 +121,30 @@ keyring==23.13.1
     # via twine
 kombu==5.2.4
     # via celery
+limits==3.3.1
+    # via
+    #   -r requirements.in
+    #   slowapi
+mako==1.2.4
+    # via alembic
+markupsafe==2.1.2
+    # via mako
 more-itertools==9.1.0
     # via jaraco-classes
 nltk==3.8.1
     # via -r requirements.in
+numpy==1.24.2
+    # via
+    #   -r requirements.in
+    #   pandas
 packaging==23.1
     # via
     #   build
     #   deprecation
+    #   limits
     #   python-semantic-release
+pandas==2.0.0
+    # via -r requirements.in
 pip-tools==6.13.0
     # via -r requirements.in
 pkginfo==1.9.6
@@ -147,6 +170,7 @@ pyproject-hooks==1.0.0
     # via build
 python-dateutil==2.8.2
     # via
+    #   pandas
     #   realtime
     #   storage3
 python-dotenv==1.0.0
@@ -159,6 +183,7 @@ pytz==2023.3
     # via
     #   celery
     #   flower
+    #   pandas
 pyyaml==6.0
     # via uvicorn
 readme-renderer==37.3
@@ -192,6 +217,8 @@ six==1.16.0
     #   bleach
     #   click-repl
     #   python-dateutil
+slowapi==0.1.8
+    # via -r requirements.in
 smmap==5.0.0
     # via gitdb
 sniffio==1.3.0
@@ -199,6 +226,10 @@ sniffio==1.3.0
     #   anyio
     #   httpcore
     #   httpx
+sqlalchemy==2.0.9
+    # via
+    #   -r requirements.in
+    #   alembic
 starlette==0.26.1
     # via fastapi
 storage3==0.5.2
@@ -225,10 +256,15 @@ twine==3.8.0
     # via python-semantic-release
 typing-extensions==4.5.0
     # via
+    #   alembic
+    #   limits
     #   pydantic
     #   realtime
+    #   sqlalchemy
     #   starlette
     #   storage3
+tzdata==2023.3
+    # via pandas
 urllib3==1.26.15
     # via
     #   requests
@@ -256,8 +292,12 @@ wheel==0.40.0
     # via
     #   pip-tools
     #   python-semantic-release
+wrapt==1.15.0
+    # via deprecated
 zipp==3.15.0
-    # via importlib-metadata
+    # via
+    #   importlib-metadata
+    #   importlib-resources
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip

@@ -3,7 +3,9 @@ from supabase import create_client, Client
 from fastapi import FastAPI
 from dna.tasks.external_tasks import show_message
 
-
+####
+# TODO: Refactor this such that it uses our configuration
+####
 url: str = os.environ.get("SUPABASE_URL")
 key: str = os.environ.get("SUPABASE_KEY")
 print(f"URL: {url}")
