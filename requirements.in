@@ -8,3 +8,9 @@ supabase
 psycopg2
 pip-tools
 nltk
+alembic
+SQLAlchemy
+pandas
+numpy
+slowapi
+limits
