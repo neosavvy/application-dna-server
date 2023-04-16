@@ -24,16 +24,16 @@ async def health():
 async def get_profiles():
 
     show_message.delay("Hello, World!")
-    #
-    # response = supabase\
-    #     .table('profiles')\
-    #     .select("*")\
-    #     .execute()
-    #
-    # print(f"Response: {response}")
-    #
-    # return {"message": "Profile created"}
-    return profiles
+
+    response = supabase\
+        .table('profiles')\
+        .select("*")\
+        .eq('name', 'Adam')\
+        .execute()
+
+    print(f"Response: {response}")
+
+    return response
 
 
 @app.post("/profiles")
